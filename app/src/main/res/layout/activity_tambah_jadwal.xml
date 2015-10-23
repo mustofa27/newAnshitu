@@ -1,0 +1,47 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Schedule's Name"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/startTime"
+            android:focusable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Start Time"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"
+            android:onClick="timePicker"
+            android:clickable="true"/>
+        <EditText
+            android:id="@+id/endTime"
+            android:focusable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="End Time"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"
+            android:onClick="timePicker"
+            android:clickable="true"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_alignParentBottom="true"
+        android:textSize="20sp"/>
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Home">
+    <item
+        android:id="@+id/action_schedule"
+        android:icon="@drawable/schedule"
+        android:title="Schedule"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/setting"
+        android:title="Setting"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="100"
+        android:title="Help"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="About"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_feedback"
+        android:orderInCategory="100"
+        android:title="Feedback"
+        app:showAsAction="never" />
+</menu>
