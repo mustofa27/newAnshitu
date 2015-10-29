@@ -2,12 +2,15 @@ package com.example.ahmadmustofa.anshitu;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -15,9 +18,9 @@ import java.util.Calendar;
 
 public class TambahJadwal extends ActionBarActivity {
 
-    private int jam,menit,status = 0;
+    private int jam,menit,status = 0,minggu,senin,selasa,rabu,kamis,jumat,sabtu;
     static final int TIME_DIALOG_ID = 0;
-    EditText et;
+    TextView et;
     private TimePickerDialog.OnTimeSetListener mTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
         @Override
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -29,9 +32,9 @@ public class TambahJadwal extends ActionBarActivity {
     private void updateDisplay()
     {
         if (status == 0)
-            et = (EditText) findViewById(R.id.startTime);
+            et = (TextView) findViewById(R.id.startTime);
         else if (status == 1)
-            et = (EditText) findViewById(R.id.endTime);
+            et = (TextView) findViewById(R.id.endTime);
         et.setText(jam + " : " + menit);
     }
     @Override
@@ -41,8 +44,8 @@ public class TambahJadwal extends ActionBarActivity {
         final Calendar cal = Calendar.getInstance();
         jam = cal.get(Calendar.HOUR_OF_DAY);
         menit = cal.get(Calendar.MINUTE);
+        minggu = senin = selasa = rabu = kamis = jumat = sabtu = 0;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,13 +70,13 @@ public class TambahJadwal extends ActionBarActivity {
     }
     public void timePicker(View view)
     {
-        /*if(view.getId() == R.id.startTime)
-            status = 0;
-        else if(view.getId() == R.id.endTime)
-            status = 1;
-        showDialog(TIME_DIALOG_ID);*/
-        et = (EditText) findViewById(R.id.startTime);
-        et.setText("oke");
+        status = 0;
+        showDialog(TIME_DIALOG_ID);
+    }
+    public void timePicker1(View view)
+    {
+        status = 1;
+        showDialog(TIME_DIALOG_ID);
     }
     protected Dialog onCreateDialog(int id)
     {
@@ -83,5 +86,113 @@ public class TambahJadwal extends ActionBarActivity {
                 return new TimePickerDialog(this,mTimeSetListener,jam,menit,false);
         }
         return null;
+    }
+    public void checkRepeat(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        if(checked)
+            findViewById(R.id.repeat).setVisibility(View.VISIBLE);
+        else
+            findViewById(R.id.repeat).setVisibility(View.GONE);
+    }
+    public void setRepeat(View v)
+    {
+        if(v.getId() == R.id.sun)
+        {
+            et = (TextView)findViewById(R.id.sun);
+            if(minggu == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                minggu = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                minggu = 1;
+            }
+        }
+        else if(v.getId() == R.id.mon)
+        {
+            et = (TextView)findViewById(R.id.mon);
+            if(senin == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                senin = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                senin = 1;
+            }
+        }
+        else if(v.getId() == R.id.tue)
+        {
+            et = (TextView)findViewById(R.id.tue);
+            if(selasa == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                selasa = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                selasa = 1;
+            }
+        }
+        else if(v.getId() == R.id.wed)
+        {
+            et = (TextView)findViewById(R.id.wed);
+            if(rabu == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                rabu = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                rabu = 1;
+            }
+        }
+        else if(v.getId() == R.id.thu)
+        {
+            et = (TextView)findViewById(R.id.thu);
+            if(kamis == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                kamis = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                kamis = 1;
+            }
+        }
+        else if(v.getId() == R.id.fri)
+        {
+            et = (TextView)findViewById(R.id.fri);
+            if(jumat == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                jumat = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                jumat = 1;
+            }
+        }
+        else if(v.getId() == R.id.sat)
+        {
+            et = (TextView)findViewById(R.id.sat);
+            if(sabtu == 1)
+            {
+                et.setTextColor(Color.GRAY);
+                sabtu = 0;
+            }
+            else
+            {
+                et.setTextColor(Color.BLACK);
+                sabtu = 1;
+            }
+        }
     }
 }
