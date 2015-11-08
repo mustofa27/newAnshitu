@@ -57,7 +57,9 @@ public class Home extends ActionBarActivity {
 
     public void ubahText(View v)
     {
+        //silent function
         Calendar calendar = Calendar.getInstance();
+        //choose the receiver
         Intent myIntent = new Intent(Home.this, AlarmReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(Home.this, 0, myIntent, 0);
         alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis()+30000, pendingIntent);

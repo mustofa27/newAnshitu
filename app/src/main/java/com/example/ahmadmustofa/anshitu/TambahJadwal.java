@@ -31,10 +31,14 @@ public class TambahJadwal extends ActionBarActivity {
     };
     private void updateDisplay()
     {
-        if (status == 0)
+        if (status == 0) {
+            //set starttime
             et = (TextView) findViewById(R.id.startTime);
-        else if (status == 1)
+        }
+        else if (status == 1) {
+            //set endtime
             et = (TextView) findViewById(R.id.endTime);
+        }
         et.setText(jam + " : " + menit);
     }
     @Override
@@ -89,10 +93,14 @@ public class TambahJadwal extends ActionBarActivity {
     }
     public void checkRepeat(View view) {
         boolean checked = ((CheckBox) view).isChecked();
-        if(checked)
+        if(checked) {
             findViewById(R.id.repeat).setVisibility(View.VISIBLE);
-        else
+            minggu = senin = selasa = rabu = kamis = jumat = sabtu = 1;
+        }
+        else {
             findViewById(R.id.repeat).setVisibility(View.GONE);
+            //minggu = senin = selasa = rabu = kamis = jumat = sabtu = 0;
+        }
     }
     public void setRepeat(View v)
     {
@@ -194,5 +202,9 @@ public class TambahJadwal extends ActionBarActivity {
                 sabtu = 1;
             }
         }
+    }
+    public void simpanData(View v)
+    {
+        //saving to database
     }
 }

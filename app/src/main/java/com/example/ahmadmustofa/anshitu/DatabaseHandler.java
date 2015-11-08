@@ -10,3 +10,4 @@
 //    private static String DATABASE_NAME = "prayTime",
 //        TABLE_NAME = "name";
 //}
+

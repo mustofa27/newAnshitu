@@ -6,10 +6,17 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Schedule extends ActionBarActivity {
 
+    List<Schedules> Jadwals = new ArrayList<Schedules>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,5 +51,18 @@ public class Schedule extends ActionBarActivity {
     private void openTambah() {
         Intent intent = new Intent(getApplicationContext(),TambahJadwal.class);
         startActivity(intent);
+    }
+    private class SchedulesListAdapter extends ArrayAdapter<Schedules>{
+        public SchedulesListAdapter(){
+            super(Schedule.this,R.layout.listview_item,Jadwals);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if(convertView == null)
+                convertView = getLayoutInflater().inflate(R.layout.listview_item,parent,false);
+            Schedules currentSchedule = Jadwals.get(position);
+            return super.getView(position, convertView, parent);
+        }
     }
 }

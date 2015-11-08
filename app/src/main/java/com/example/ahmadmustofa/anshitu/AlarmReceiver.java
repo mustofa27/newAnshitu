@@ -19,16 +19,14 @@ public class AlarmReceiver extends WakefulBroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        //this will update the UI with message
+        //this is the silencing business part
         AudioManager audioManager = (AudioManager)Anshitu.getApp().getSystemService(Context.AUDIO_SERVICE);
+        //choose whether silencing or back to normal
         if(Anshitu.anshitu.flag == 0){
             Anshitu.anshitu.ringerMode = audioManager.getRingerMode();
             audioManager.setRingerMode(0);
             Calendar calendar = Calendar.getInstance();
-            Intent myIntent = new Intent(Anshitu.anshitu, AlarmReceiver.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(Anshitu.anshitu, 0, myIntent, 0);
-            AlarmManager alarmManager = (AlarmManager) Anshitu.getApp().getSystemService(Context.ALARM_SERVICE);
-            alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis()+30000, pendingIntent);
+            Anshitu.getApp().startAlarmService(calendar);
             Anshitu.anshitu.flag = 1;
         }
         else if(Anshitu.anshitu.flag == 1)
