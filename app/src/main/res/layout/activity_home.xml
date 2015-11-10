@@ -8,290 +8,128 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home"
     android:orientation="vertical">
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal">
-            <TextView
+        android:layout_weight="10"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
-                android:text="Jadwal Waktu Shalat Hari Ini"
-                android:textAllCaps="true"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:onClick="openPray">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/shalat2"
+                    android:layout_gravity="center_horizontal"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pray Time"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:layout_margin="8dp"
-                android:background="@color/younggreen">
-
-                <TextView
-                    android:id="@+id/subuh"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:clickable="true"
-                    android:onClick="collapse"
-                    android:text="Subuh"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:onClick="openSchedule">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/list"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_alignParentRight="true"
-                    android:onClick="collapse"
-                    android:text="04.15"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/llSubuh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/subuh"
-                    android:padding="8dp"
-                    android:visibility="gone">
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/alarm" />
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/anshit"
-                        android:onClick="ubahText"/>
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+                    android:text="Schedule"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:layout_margin="8dp"
-                android:background="@color/younggreen">
-
-                <TextView
-                    android:id="@+id/dzuhur"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:clickable="true"
-                    android:onClick="collapse"
-                    android:text="Dzuhur"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:onClick="openKiblat">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/kiblat2"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_alignParentRight="true"
-                    android:onClick="collapse"
-                    android:text="11.25"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/llDzuhur"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/dzuhur"
-                    android:padding="8dp"
-                    android:visibility="gone">
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/alarm" />
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/anshit" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+                    android:text="Kiblat"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:layout_margin="8dp"
-                android:background="@color/younggreen">
-                <TextView
-                    android:id="@+id/ashar"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:onClick="openHelp">
+                <ImageView
                     android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:clickable="true"
-                    android:onClick="collapse"
-                    android:text="ashar"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:layout_height="120dp"
+                    android:id="@+id/homeJadwal"
+                    android:src="@drawable/help2"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_alignParentRight="true"
-                    android:onClick="collapse"
-                    android:text="14.45"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/llAshar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/ashar"
-                    android:padding="8dp"
-                    android:visibility="gone">
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/alarm" />
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/anshit" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:layout_margin="8dp"
-                android:background="@color/younggreen">
-
-                <TextView
-                    android:id="@+id/maghrib"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:clickable="true"
-                    android:onClick="collapse"
-                    android:text="maghrib"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_alignParentRight="true"
-                    android:onClick="collapse"
-                    android:text="17.25"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/llMaghrib"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/maghrib"
-                    android:padding="8dp"
-                    android:visibility="gone">
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/alarm" />
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/anshit" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:layout_margin="8dp"
-                android:background="@color/younggreen">
-
-                <TextView
-                    android:id="@+id/isya"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:clickable="true"
-                    android:onClick="collapse"
-                    android:text="isya'"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_alignParentRight="true"
-                    android:onClick="collapse"
-                    android:text="18.30"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/llIsya"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/isya"
-                    android:padding="8dp"
-                    android:visibility="gone">
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/alarm" />
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/anshit" />
-                </LinearLayout>
-        </RelativeLayout>
+                    android:text="Help"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="bottom">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Copyright Al-Muflihun"
+            android:gravity="center"
+            android:textSize="17sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2015"
+            android:gravity="center"
+            android:textSize="17sp"/>
     </LinearLayout>
 </LinearLayout>

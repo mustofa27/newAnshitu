@@ -22,7 +22,6 @@ public class Home extends ActionBarActivity {
     private static Home inst;
     AlarmManager alarmManager;
     private PendingIntent pendingIntent;
-    Button onOff;
     Silencer silencer;
     int i = 0;
     public static Home instance() {
@@ -79,20 +78,12 @@ public class Home extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_help) {
-            openHelp();
-            return true;
-        }
         if (id == R.id.action_about) {
             openAbout();
             return true;
         }
         if (id == R.id.action_feedback) {
             openFeedback();
-            return true;
-        }
-        if (id == R.id.action_schedule) {
-            openSchedule();
             return true;
         }
         if (id == R.id.action_setting) {
@@ -102,7 +93,7 @@ public class Home extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    private void openSchedule() {
+    public void openSchedule(View v) {
         Intent intent = new Intent(getApplicationContext(), Schedule.class);
         startActivity(intent);
     }
@@ -111,8 +102,16 @@ public class Home extends ActionBarActivity {
         Intent intent = new Intent(getApplicationContext(), Setting.class);
         startActivity(intent);
     }
+    public void openPray(View v) {
+        Intent intent = new Intent(getApplicationContext(), PrayTime.class);
+        startActivity(intent);
+    }
 
-    private void openHelp()
+    public void openKiblat(View v) {
+        Intent intent = new Intent(getApplicationContext(), Kiblat.class);
+        startActivity(intent);
+    }
+    public void openHelp(View v)
     {
         //final Context context = this;
         Intent intent = new Intent(getApplicationContext(), Help.class);

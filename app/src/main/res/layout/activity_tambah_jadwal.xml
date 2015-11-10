@@ -12,6 +12,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         >
         <EditText
+            android:id="@+id/nama_jadwal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Schedule's Name"

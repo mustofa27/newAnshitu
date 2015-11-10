@@ -2,6 +2,7 @@ package com.example.ahmadmustofa.anshitu;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,20 +13,31 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 
 public class TambahJadwal extends ActionBarActivity {
 
-    private int jam,menit,status = 0,minggu,senin,selasa,rabu,kamis,jumat,sabtu;
+    private int jam,menit,jamS,menitS,repeat,minggu,senin,selasa,rabu,kamis,jumat,sabtu,status = 0;
     static final int TIME_DIALOG_ID = 0;
+    DatabaseHandler dbHandler;
+    EditText nama;
     TextView et;
     private TimePickerDialog.OnTimeSetListener mTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
         @Override
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            jam = hourOfDay;
-            menit = minute;
+            if(status == 0)
+            {
+                jam = hourOfDay;
+                menit = minute;
+            }
+            else
+            {
+                jamS = hourOfDay;
+                menitS = minute;
+            }
             updateDisplay();
         }
     };
@@ -34,12 +46,13 @@ public class TambahJadwal extends ActionBarActivity {
         if (status == 0) {
             //set starttime
             et = (TextView) findViewById(R.id.startTime);
+            et.setText(jam + " : " + menit);
         }
         else if (status == 1) {
             //set endtime
             et = (TextView) findViewById(R.id.endTime);
+            et.setText(jamS + " : " + menitS);
         }
-        et.setText(jam + " : " + menit);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +62,8 @@ public class TambahJadwal extends ActionBarActivity {
         jam = cal.get(Calendar.HOUR_OF_DAY);
         menit = cal.get(Calendar.MINUTE);
         minggu = senin = selasa = rabu = kamis = jumat = sabtu = 0;
+        dbHandler = new DatabaseHandler(getApplicationContext());
+        nama = (EditText) findViewById(R.id.nama_jadwal);
     }
 
     @Override
@@ -95,10 +110,12 @@ public class TambahJadwal extends ActionBarActivity {
         boolean checked = ((CheckBox) view).isChecked();
         if(checked) {
             findViewById(R.id.repeat).setVisibility(View.VISIBLE);
+            repeat = 1;
             minggu = senin = selasa = rabu = kamis = jumat = sabtu = 1;
         }
         else {
             findViewById(R.id.repeat).setVisibility(View.GONE);
+            repeat = 0;
             //minggu = senin = selasa = rabu = kamis = jumat = sabtu = 0;
         }
     }
@@ -203,8 +220,14 @@ public class TambahJadwal extends ActionBarActivity {
             }
         }
     }
+
     public void simpanData(View v)
     {
         //saving to database
+        Schedules schedules = new Schedules(dbHandler.getScheduleCount(),nama.getText().toString(),jam,menit,jamS,menitS,repeat,senin,selasa,rabu,kamis,jumat,sabtu,minggu);
+        dbHandler.createSchedule(schedules);
+        Toast.makeText(getApplicationContext(),nama.getText().toString()+" has been added",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),Schedule.class);
+        startActivity(intent);
     }
 }

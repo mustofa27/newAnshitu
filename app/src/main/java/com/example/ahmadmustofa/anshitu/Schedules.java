@@ -7,14 +7,15 @@ import java.util.Date;
  */
 public class Schedules {
     private String namaJadwal;
-    private int id,jamMulai,menitMulai,durasi,repeat,senin,selasa,rabu,kamis,jumat,sabtu,minggu;
-    public Schedules(int _id,String nameJadwal,int h, int m, int duration, int repeat, int sen, int sel, int rab, int kam, int jum, int sab, int ming)
+    private int id,jamMulai,menitMulai,jamSelesai,menitSelesai,repeat,senin,selasa,rabu,kamis,jumat,sabtu,minggu;
+    public Schedules(int _id,String nameJadwal,int h, int m, int hs, int ms, int repeat, int sen, int sel, int rab, int kam, int jum, int sab, int ming)
     {
         id = _id;
         namaJadwal = nameJadwal;
         jamMulai = h;
         menitMulai = m;
-        durasi = duration;
+        jamSelesai = hs;
+        menitSelesai = ms;
         this.repeat = repeat;
         senin = sen;
         selasa = sel;
@@ -32,12 +33,9 @@ public class Schedules {
     public int getJamMulai() {
         return jamMulai;
     }
-    public int getMenitMulai() {
-        return menitMulai;
-    }
-    public int getDurasi() {
-        return durasi;
-    }
+    public int getMenitMulai() { return menitMulai; }
+    public int getJamSelesai() { return jamSelesai; }
+    public int getMenitSelesai() { return menitSelesai; }
     public int getRepeat() { return repeat; }
     public int getSenin() {
         return senin;

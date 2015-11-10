@@ -9,4 +9,6 @@
     <string name="title_activity_schedule">Schedule</string>
     <string name="title_activity_setting">Setting</string>
     <string name="title_activity_tambah_jadwal">Tambah Jadwal</string>
+    <string name="title_activity_kiblat">Kiblat</string>
+    <string name="title_activity_pray_time">PrayTime</string>
 </resources>

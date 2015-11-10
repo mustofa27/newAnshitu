@@ -4,20 +4,21 @@
     android:padding="16dp"
     android:layout_height="match_parent">
     <LinearLayout
+        android:id="@+id/pusat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="8dp"
-        android:background="#eeeeee"
+        android:background="@color/younggray"
         android:clickable="true">
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Schedule's Name"
             android:textSize="24sp"
             android:layout_marginRight="70dp"
-            android:textStyle="bold"
-            android:clickable="true"/>
+            android:textStyle="bold"/>
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
@@ -37,12 +38,11 @@
         android:orientation="vertical"
         android:id="@+id/detail"
         android:layout_marginLeft="16dp"
-        android:visibility="visible">
+        android:visibility="gone">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:onClick="timePicker">
+            android:padding="8dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,8 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:clickable="true"
-            android:onClick="timePicker1">
+            android:clickable="true">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -116,9 +115,7 @@
                     android:text="Sun"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/mon"
                     android:layout_width="wrap_content"
@@ -127,9 +124,7 @@
                     android:text="Mon"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/tue"
                     android:layout_width="wrap_content"
@@ -138,9 +133,7 @@
                     android:text="Tue"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/wed"
                     android:layout_width="wrap_content"
@@ -149,9 +142,7 @@
                     android:text="Wed"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/thu"
                     android:layout_width="wrap_content"
@@ -160,9 +151,7 @@
                     android:text="Thu"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/fri"
                     android:layout_width="wrap_content"
@@ -171,9 +160,7 @@
                     android:text="Fri"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/sat"
                     android:layout_width="wrap_content"
@@ -182,9 +169,7 @@
                     android:text="Sat"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:onClick="setRepeat"/>
+                    android:layout_weight="1"/>
             </LinearLayout>
         </LinearLayout>
 
