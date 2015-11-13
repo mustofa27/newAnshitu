@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ahmadmustofa.anshitu" >
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -45,23 +46,21 @@
             android:name=".TambahJadwal"
             android:label="@string/title_activity_tambah_jadwal"
             android:parentActivityName=".Schedule" />
-
+        <activity
+            android:name=".Kiblat"
+            android:label="@string/title_activity_kiblat"
+            android:parentActivityName=".Home" >
+        </activity>
+        <activity
+            android:name=".PrayTime"
+            android:label="@string/title_activity_pray_time"
+            android:parentActivityName=".Home" >
+        </activity>
         <service
             android:name=".AlarmService"
             android:enabled="true" />
 
         <receiver android:name=".AlarmReceiver" />
-
-        <activity
-            android:name=".Kiblat"
-            android:label="@string/title_activity_kiblat"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".PrayTime"
-            android:label="@string/title_activity_pray_time"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
     </application>
 
 </manifest>

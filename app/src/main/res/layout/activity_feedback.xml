@@ -5,6 +5,7 @@
     tools:context="com.ahmad12.mustofa.anshitu_baru.Feedback">
 
     <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -49,11 +50,13 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="Send Feedback"
+        android:layout_alignParentRight="true"
+        android:text="Send"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:background="@color/younggreen"/>
+        android:layout_below="@+id/layout1"
+        android:layout_marginRight="20dp"
+        android:onClick="send"/>
 </RelativeLayout>

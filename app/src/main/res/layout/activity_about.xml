@@ -20,110 +20,119 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/younggreen"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp">
+            android:padding="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name Application"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Anshitu"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginBottom="8dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/younggreen"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp">
+            android:padding="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Version"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alpha"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginBottom="8dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/younggreen"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp">
+            android:padding="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Developer"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Al Muflihun"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginBottom="8dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@color/younggreen"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp">
+            android:padding="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Purpose"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Amal Jariyah"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@android:color/holo_green_dark"
+            android:layout_marginBottom="8dp"/>
     </LinearLayout>
 </RelativeLayout>

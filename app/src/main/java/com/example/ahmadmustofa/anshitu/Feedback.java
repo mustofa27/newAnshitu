@@ -4,8 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class Feedback extends ActionBarActivity {
@@ -38,5 +40,9 @@ public class Feedback extends ActionBarActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+    public void send(View v)
+    {
+        Toast.makeText(getApplicationContext(),"Feedback has been sent",Toast.LENGTH_SHORT).show();
     }
 }

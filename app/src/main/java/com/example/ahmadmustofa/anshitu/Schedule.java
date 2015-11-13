@@ -2,6 +2,8 @@ package com.example.ahmadmustofa.anshitu;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,6 +27,7 @@ public class Schedule extends ActionBarActivity {
 
     List<Schedules> Jadwals = new ArrayList<Schedules>();
     ListView listView;
+    ArrayAdapter<Schedules> adapter;
     DatabaseHandler dbHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,18 @@ public class Schedule extends ActionBarActivity {
         setContentView(R.layout.activity_schedule);
         listView = (ListView) findViewById(R.id.schedulesView);
         dbHandler = new DatabaseHandler(getApplicationContext());
+        instanceView();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTambah();
+            }
+        });
+    }
+
+    public void instanceView()
+    {
         List<Schedules> fromDatabase = dbHandler.getAllSchedules();
         int count = dbHandler.getScheduleCount();
         for(int i = 0; i < count; i++)
@@ -37,7 +54,6 @@ public class Schedule extends ActionBarActivity {
         if(count != 0)
             populateList();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,12 +67,12 @@ public class Schedule extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        /*int id = item.getItemId();
         if(id == R.id.action_add)
         {
             openTambah();
             return true;
-        }
+        }*/
         //noinspection SimplifiableIfStatement
 
 
@@ -70,7 +86,7 @@ public class Schedule extends ActionBarActivity {
 
     public void populateList()
     {
-        ArrayAdapter<Schedules> adapter = new SchedulesListAdapter();
+        adapter = new SchedulesListAdapter();
         listView.setAdapter(adapter);
     }
     private class SchedulesListAdapter extends ArrayAdapter<Schedules> {
@@ -83,62 +99,55 @@ public class Schedule extends ActionBarActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             if(convertView == null)
                 convertView = getLayoutInflater().inflate(R.layout.listview_item,parent,false);
-            Schedules currentSchedule = Jadwals.get(position);
+            final Schedules currentSchedule = Jadwals.get(position);
             TextView nama = (TextView) convertView.findViewById(R.id.name);
             nama.setText(currentSchedule.getNamaJadwal());
             TextView start = (TextView) convertView.findViewById(R.id.startTime);
             start.setText(currentSchedule.getJamMulai()+" : "+currentSchedule.getMenitMulai());
             TextView end = (TextView) convertView.findViewById(R.id.endTime);
             end.setText(currentSchedule.getJamSelesai()+" : "+currentSchedule.getMenitSelesai());
-            CheckBox checkRepeat = (CheckBox) convertView.findViewById(R.id.ulang);
             LinearLayout detailUlang = (LinearLayout) convertView.findViewById(R.id.repeat);
             final LinearLayout detail = (LinearLayout)convertView.findViewById(R.id.detail);
-            if(currentSchedule.getRepeat() == 1)
-            {
-                checkRepeat.setChecked(true);
-                detailUlang.setVisibility(View.VISIBLE);
-                TextView sen = (TextView) convertView.findViewById(R.id.mon);
-                TextView sel = (TextView) convertView.findViewById(R.id.tue);
-                TextView rab = (TextView) convertView.findViewById(R.id.wed);
-                TextView kam = (TextView) convertView.findViewById(R.id.thu);
-                TextView jum = (TextView) convertView.findViewById(R.id.fri);
-                TextView sab = (TextView) convertView.findViewById(R.id.sat);
-                TextView min = (TextView) convertView.findViewById(R.id.sun);
-                if(currentSchedule.getSenin() == 0)
-                    sen.setTextColor(Color.GRAY);
-                else
-                    sen.setTextColor(Color.BLACK);
-                if(currentSchedule.getSelasa() == 0)
-                    sel.setTextColor(Color.GRAY);
-                else
-                    sel.setTextColor(Color.BLACK);
-                if(currentSchedule.getRabu() == 0)
-                    rab.setTextColor(Color.GRAY);
-                else
-                    rab.setTextColor(Color.BLACK);
-                if(currentSchedule.getKamis() == 0)
-                    kam.setTextColor(Color.GRAY);
-                else
-                    kam.setTextColor(Color.BLACK);
-                if(currentSchedule.getJumat() == 0)
-                    jum.setTextColor(Color.GRAY);
-                else
-                    jum.setTextColor(Color.BLACK);
-                if(currentSchedule.getSabtu() == 0)
-                    sab.setTextColor(Color.GRAY);
-                else
-                    sab.setTextColor(Color.BLACK);
-                if(currentSchedule.getMinggu() == 0)
-                    min.setTextColor(Color.GRAY);
-                else
-                    min.setTextColor(Color.BLACK);
-            }
+            detailUlang.setVisibility(View.VISIBLE);
+            TextView sen = (TextView) convertView.findViewById(R.id.mon);
+            TextView sel = (TextView) convertView.findViewById(R.id.tue);
+            TextView rab = (TextView) convertView.findViewById(R.id.wed);
+            TextView kam = (TextView) convertView.findViewById(R.id.thu);
+            TextView jum = (TextView) convertView.findViewById(R.id.fri);
+            TextView sab = (TextView) convertView.findViewById(R.id.sat);
+            TextView min = (TextView) convertView.findViewById(R.id.sun);
+            if(currentSchedule.getSenin() == 0)
+                sen.setTextColor(Color.GRAY);
             else
-            {
-                checkRepeat.setChecked(false);
-                detailUlang.setVisibility(View.GONE);
-            }
-            LinearLayout pusat = (LinearLayout) convertView.findViewById(R.id.pusat);
+                sen.setTextColor(Color.BLACK);
+            if(currentSchedule.getSelasa() == 0)
+                sel.setTextColor(Color.GRAY);
+            else
+                sel.setTextColor(Color.BLACK);
+            if(currentSchedule.getRabu() == 0)
+                rab.setTextColor(Color.GRAY);
+            else
+                rab.setTextColor(Color.BLACK);
+            if(currentSchedule.getKamis() == 0)
+                kam.setTextColor(Color.GRAY);
+            else
+                kam.setTextColor(Color.BLACK);
+            if(currentSchedule.getJumat() == 0)
+                jum.setTextColor(Color.GRAY);
+            else
+                jum.setTextColor(Color.BLACK);
+            if(currentSchedule.getSabtu() == 0)
+                sab.setTextColor(Color.GRAY);
+            else
+                sab.setTextColor(Color.BLACK);
+            if(currentSchedule.getMinggu() == 0)
+                min.setTextColor(Color.GRAY);
+            else
+                min.setTextColor(Color.BLACK);
+
+            //set onclick untuk memperlihatkan detail
+
+            RelativeLayout pusat = (RelativeLayout) convertView.findViewById(R.id.pusat);
             pusat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -146,6 +155,25 @@ public class Schedule extends ActionBarActivity {
                         detail.setVisibility(View.VISIBLE);
                     else if(detail.getVisibility() == View.VISIBLE)
                         detail.setVisibility(View.GONE);
+                }
+            });
+            ImageView edit = (ImageView) convertView.findViewById(R.id.edit);
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(),TambahJadwal.class);
+                    intent.putExtra("editJadwal",currentSchedule);
+                    startActivity(intent);
+                }
+            });
+            ImageView del = (ImageView) convertView.findViewById(R.id.del);
+            del.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dbHandler.deleteSchedule(currentSchedule);
+                    adapter.clear();
+                    instanceView();
+                    //onCreate(new Bundle());
                 }
             });
             return convertView;
