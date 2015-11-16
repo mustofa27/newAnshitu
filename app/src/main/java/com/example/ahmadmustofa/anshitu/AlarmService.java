@@ -20,9 +20,9 @@ public class AlarmService extends IntentService {
 
     @Override
     public void onHandleIntent(Intent intent) {
-        if(Anshitu.anshitu.flag == 1)
+        if(Anshitu.getApp().flag == 1)
             sendNotification("Your phone is in silent mode");
-        else if(Anshitu.anshitu.flag == 0)
+        else if(Anshitu.getApp().flag == 0)
             sendNotification("Your phone back to normal mode");
     }
 

@@ -86,7 +86,8 @@ public class Schedule extends ActionBarActivity {
 
     public void populateList()
     {
-        adapter = new SchedulesListAdapter();
+        if(adapter == null)
+            adapter = new SchedulesListAdapter();
         listView.setAdapter(adapter);
     }
     private class SchedulesListAdapter extends ArrayAdapter<Schedules> {

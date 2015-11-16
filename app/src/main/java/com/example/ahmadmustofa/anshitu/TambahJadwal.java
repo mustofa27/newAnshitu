@@ -1,7 +1,10 @@
 package com.example.ahmadmustofa.anshitu;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
@@ -298,6 +301,13 @@ public class TambahJadwal extends ActionBarActivity {
             dbHandler.updateSchedule(schedules);
             Toast.makeText(getApplicationContext(),"Schedule has been Updated",Toast.LENGTH_SHORT).show();
         }
+        Intent alarmIntent = new Intent(getApplicationContext(),AlarmReceiver.class);
+        alarmIntent.putExtra("jadwal", schedules);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY,schedules.getJamMulai());
+        calendar.set(Calendar.MINUTE,schedules.getMenitMulai());
+        Toast.makeText(getApplicationContext(),"Alarm Time : "+String.valueOf(calendar.getTime()),Toast.LENGTH_LONG).show();
+        Anshitu.getApp().startAlarmService(alarmIntent,calendar);
         Intent intent = new Intent(getApplicationContext(),Schedule.class);
         startActivity(intent);
     }

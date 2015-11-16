@@ -59,5 +59,4 @@
                 android:spinnerMode="dropdown"></Spinner>
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>

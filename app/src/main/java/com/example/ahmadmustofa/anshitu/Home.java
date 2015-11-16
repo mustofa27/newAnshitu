@@ -38,18 +38,6 @@ public class Home extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        /*onOff = (Button) findViewById(R.id.onOff);
-        onOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ubahText();
-                /*if(i == 0)
-                    i++;
-                else
-                    i--;/
-                //silencer = new Silencer();
-            }
-        })  ;*/
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
     }
 
@@ -59,9 +47,11 @@ public class Home extends ActionBarActivity {
         //silent function
         Calendar calendar = Calendar.getInstance();
         //choose the receiver
+        calendar.set(Calendar.HOUR_OF_DAY,12);
+        calendar.set(Calendar.MINUTE,58);
         Intent myIntent = new Intent(Home.this, AlarmReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(Home.this, 0, myIntent, 0);
-        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis()+30000, pendingIntent);
+        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

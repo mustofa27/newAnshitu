@@ -1,12 +1,21 @@
 package com.example.ahmadmustofa.anshitu;
 
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 
 public class Setting extends ActionBarActivity {
