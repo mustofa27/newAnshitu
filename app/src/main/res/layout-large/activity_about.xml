@@ -12,28 +12,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp">
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp">
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name Application"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Anshitu"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
@@ -47,7 +47,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:padding="8dp">
@@ -56,14 +56,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Version"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alpha"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
@@ -73,11 +73,11 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:background="@android:color/holo_green_dark"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:padding="8dp">
@@ -86,14 +86,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Developer"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Al Muflihun"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
@@ -103,27 +103,27 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:background="@android:color/holo_green_dark"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Purpose"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Amal Jariyah"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="@color/black"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
@@ -133,6 +133,6 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:background="@android:color/holo_green_dark"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
     </LinearLayout>
 </RelativeLayout>

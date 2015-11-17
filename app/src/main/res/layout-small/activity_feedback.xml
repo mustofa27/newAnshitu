@@ -9,9 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="20dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp">
 
         <EditText
             android:layout_width="match_parent"
@@ -22,21 +22,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
             android:text="Your email address" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:hint="youremail@email.com" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
             android:text="Feedback type" />
 
@@ -44,7 +44,7 @@
             android:id="@+id/feedbackType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:spinnerMode="dropdown" />
     </LinearLayout>
@@ -55,8 +55,8 @@
         android:layout_alignParentRight="true"
         android:text="Send"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_below="@+id/layout1"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="15dp"
         android:onClick="send"/>
 </RelativeLayout>

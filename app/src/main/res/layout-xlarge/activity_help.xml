@@ -2,27 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="24dp"
     tools:context="com.example.ahmadmustofa.anshitu.Help">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp">
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="60dp"
             android:gravity="center_horizontal"
             android:text="Frequently Asked Question"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/faq1"
@@ -32,58 +32,58 @@
             android:onClick="onClick"
             android:text="What is Schedule ?"
             android:textColor="#0000FF"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/aq1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:clickable="true"
             android:text="Schedule is a menu to add a period to silence your phone except of pray time."
-            android:textSize="15sp"
+            android:textSize="25sp"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/faq2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="35dp"
             android:clickable="true"
             android:onClick="onClick"
             android:text="What is the function of Duration field in the Settings menu ?"
             android:textColor="#0000FF"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/aq2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:clickable="true"
             android:text="Duration is used to determine the duration of your phone in silent mode."
-            android:textSize="15sp"
+            android:textSize="25sp"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/faq3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="35dp"
             android:clickable="true"
             android:onClick="onClick"
             android:text="What happen if I don't give the feedback ?"
             android:textColor="#0000FF"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/aq3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:clickable="true"
             android:text="If you don't give the feedback, you can't help the developer to upgrade Anshitu."
-            android:textSize="15sp"
+            android:textSize="25sp"
             android:visibility="gone" />
     </LinearLayout>
 </RelativeLayout>

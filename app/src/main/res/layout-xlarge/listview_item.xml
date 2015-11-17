@@ -7,7 +7,7 @@
         android:id="@+id/pusat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="12dp"
         android:background="@color/younggray"
         android:clickable="true">
         <TextView
@@ -15,21 +15,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Schedule's Name"
-            android:textSize="24sp"
-            android:layout_marginRight="70dp"
+            android:textSize="35sp"
+            android:layout_marginRight="100dp"
             android:textStyle="bold"/>
         <ImageView
             android:id="@+id/edit"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/edit"
             android:clickable="true"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="35dp"
             android:layout_toLeftOf="@+id/del"/>
         <ImageView
             android:id="@+id/del"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/delete1"
             android:layout_alignParentRight="true"
             android:clickable="true"/>
@@ -40,61 +40,61 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/detail"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="24dp"
         android:visibility="gone">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="12dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Start Time"
-                android:textSize="18sp"/>
+                android:textSize="24sp"/>
             <TextView
                 android:id="@+id/startTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:background="@android:color/holo_green_dark"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:padding="12dp"
             android:clickable="true">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="End Time"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:clickable="true"/>
             <TextView
                 android:id="@+id/endTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="40sp"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:background="@android:color/holo_green_dark"
-            android:layout_marginBottom="3dp"/>
+            android:layout_marginBottom="7dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="12dp">
             <LinearLayout
                 android:id="@+id/repeat"
                 android:layout_width="match_parent"
@@ -105,74 +105,74 @@
                     android:id="@+id/sun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Sun"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
                 <TextView
                     android:id="@+id/mon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Mon"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
                 <TextView
                     android:id="@+id/tue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Tue"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
                 <TextView
                     android:id="@+id/wed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Wed"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
                 <TextView
                     android:id="@+id/thu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Thu"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
                 <TextView
                     android:id="@+id/fri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Fri"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
                 <TextView
                     android:id="@+id/sat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="40sp"
                     android:text="Sat"
                     android:textColor="@android:color/black"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"/>
+                    android:layout_weight="3"/>
             </LinearLayout>
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:background="@android:color/holo_green_dark"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="12dp"/>
     </LinearLayout>
 </LinearLayout>
